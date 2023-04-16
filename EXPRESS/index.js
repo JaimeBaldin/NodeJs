@@ -24,6 +24,17 @@ const app = Express();
   });
 
 
+  app.get('/canal/youtube', function(req, res) {
+      var canal = req.query["canal"];
+
+      if(!canal){
+          canal = "youtube";
+      }
+
+      res.send("O canal é " + canal);
+   });
+
+
 app.listen(8080,function(erro){
     if(erro){
         console.log("Ocorreu um erro");
